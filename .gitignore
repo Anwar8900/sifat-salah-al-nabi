@@ -1,0 +1,14 @@
+# Source artifacts — not part of the published Arabic-only site
+*.pdf
+IMG_*.jpg
+*.ps1
+
+# Unfinished translations and their source data (kept outside this repo)
+en/
+ur/
+data/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini

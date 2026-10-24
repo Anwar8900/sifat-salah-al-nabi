@@ -1,0 +1,24 @@
+{
+  "name": "صفة صلاة النبي ﷺ",
+  "short_name": "صفة الصلاة",
+  "description": "صفة صلاة النبي ﷺ — النص العربي الكامل مع الأذكار والسنن، شرح مختصر لطريقة صلاة النبي ﷺ.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./ar/",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FBF7EE",
+  "theme_color": "#1D6B50",
+  "categories": ["books", "education", "lifestyle"],
+  "icons": [
+    { "src": "assets/img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/img/icon-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "طريقة الصلاة", "url": "./ar/salah.html" },
+    { "name": "الأذكار", "url": "./ar/adhkar.html" },
+    { "name": "السنن", "url": "./ar/sunan.html" }
+  ]
+}
