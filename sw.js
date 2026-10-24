@@ -1,17 +1,22 @@
 /* Service worker — offline support for صفة صلاة النبي */
-var CACHE = "salat-v1.4.0";
-var VER = "1.4.0";
+var CACHE = "salat-v1.5.0";
+var VER = "1.5.0";
 var CORE = [
   "./",
   "./index.html",
+  "./404.html",
   "./ar/", "./ar/index.html", "./ar/salah.html", "./ar/adhkar.html", "./ar/sunan.html",
   "./assets/css/style.css?v=" + VER,
   "./assets/css/fonts.css?v=" + VER,
   "./assets/js/app.js?v=" + VER,
   "./manifest.webmanifest",
+  "./assets/img/logo-header.png",
+  "./assets/img/logo-256.png",
+  "./assets/img/icon-32.png",
   "./assets/img/icon-192.png",
   "./assets/img/icon-512.png",
   "./assets/img/icon-maskable.png",
+  "./assets/img/apple-touch-icon.png",
   "./assets/img/masjid-night.jpg",
   "./assets/img/masjid-chandelier.jpg",
   "./assets/img/calligraphy-muhammad.jpg",
