@@ -1,4 +1,4 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 
 Sitemap: https://anwar8900.github.io/sifat-salah-al-nabi/sitemap.xml

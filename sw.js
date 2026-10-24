@@ -1,4 +1,4 @@
-﻿/* Service worker — offline support for صفة صلاة النبي */
+/* Service worker — offline support for صفة صلاة النبي */
 var CACHE = "salat-v1.4.0";
 var VER = "1.4.0";
 var CORE = [
