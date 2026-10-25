@@ -106,6 +106,7 @@
   var input = document.getElementById("q");
   var head = document.getElementById("results-head");
   var paras = Array.prototype.slice.call(document.querySelectorAll(".prose p"));
+  var notes = Array.prototype.slice.call(document.querySelectorAll(".prose .explain"));
 
   // Normalise once, so composed/decomposed hamza forms are searchable and copyable.
   paras.forEach(function (p) {
@@ -132,6 +133,7 @@
           p.hidden = false;
           if (p.dataset.orig) { p.textContent = p.dataset.orig; delete p.dataset.orig; }
         });
+        notes.forEach(function (n) { n.hidden = false; });
         document.querySelectorAll("section.chapter, .intro-block").forEach(function (c) { c.hidden = false; });
         setSideState();
         return;
@@ -164,6 +166,9 @@
           ? (hits + " " + (hits === 1 ? (head.dataset.hitsOne || "result") : (head.dataset.hitsMany || "results")))
           : (head.dataset.none || "No results");
       }
+      notes.forEach(function (n) {
+        n.hidden = (n.querySelectorAll("p:not([hidden])").length === 0);
+      });
       document.querySelectorAll("section.chapter, .intro-block").forEach(function (c) {
         c.hidden = (c.querySelectorAll(".prose p:not([hidden])").length === 0);
       });

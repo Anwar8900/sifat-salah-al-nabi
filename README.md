@@ -29,7 +29,7 @@ assets/css/         style.css + fonts.css (خطوط محلية)
 assets/js/app.js    الوضع الليلي، مقياس الخط، البحث، الفهرس، رسالة «قادم»
 assets/fonts/       الخطوط المحلية (OFL)
 assets/img/         الشعار (رأس الصفحة والفافيكون) + صور الأغلفة + أيقونات التطبيق
-sw.js               Service Worker (إصدار 1.6.0)
+sw.js               Service Worker (إصدار 1.7.0)
 manifest.webmanifest
 sitemap.xml         روابط الموقع المنشور فقط
 robots.txt          يشير إلى sitemap.xml
@@ -44,7 +44,7 @@ robots.txt          يشير إلى sitemap.xml
   رابط الموقع الفعلي أعلاه.
 - بعد أي تعديل: ارفع الملفات إلى `main`، وسيعيد GitHub Pages البناء تلقائياً.
 - عند تغيير ملفات مخزّنة مؤقتاً، ارفع رقم `CACHE` و`VER` في `sw.js` ورقم `?v=`
-  في صفحات HTML؛ الإصدار الحالي `1.6.0`.
+  في صفحات HTML؛ الإصدار الحالي `1.7.0`.
 
 ## خصائص
 

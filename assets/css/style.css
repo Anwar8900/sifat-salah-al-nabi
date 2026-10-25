@@ -263,6 +263,20 @@ html[lang="ur"] .prose p { line-height: var(--lh-ur); text-align: right; }
   font-family: var(--font-ar); text-align: right; line-height: var(--lh-ar);
 }
 .prose p.quote { color: var(--ink-soft); font-size: .96em; border-inline-start-color: var(--accent); }
+.prose .explain {
+  margin: .2rem 0 1.35rem;
+  padding: .95rem 1.05rem;
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-inline-start: 3px solid var(--gold);
+  border-radius: var(--radius-sm);
+}
+.prose .explain p {
+  margin: 0 0 .65rem;
+  color: var(--ink-soft);
+  text-align: right;
+}
+.prose .explain p:last-child { margin-bottom: 0; }
 .prose .ref { color: var(--muted); font-size: .84em; font-family: var(--font-ui); }
 .prose strong { color: var(--ink); }
 
@@ -425,6 +439,8 @@ figure.plate figcaption {
   section.chapter > h2 { break-after: avoid; page-break-after: avoid; border-bottom-color: #ccc; color: #000; }
   section.chapter > h2 .step { background: #000; color: #fff; }
   .prose p { text-align: start; orphans: 3; widows: 3; }
+  .prose .explain { break-inside: avoid; page-break-inside: avoid; background: #fff; border-color: #ccc; border-inline-start-color: #000; }
+  .prose .explain p { color: #000; text-align: start; }
   .intro-block { break-inside: avoid; page-break-inside: avoid; box-shadow: none; border: 1px solid #ccc; border-top: 3px solid #000; background: #fff; }
   .intro-block > h2, .intro-prose p { color: #000; }
   figure.plate { break-inside: avoid; page-break-inside: avoid; }
