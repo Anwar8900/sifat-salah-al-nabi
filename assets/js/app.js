@@ -214,7 +214,52 @@
     clearTimeout(t._t);
     t._t = setTimeout(function () { t.classList.remove("show"); }, 2400);
   }
+
+  /* ---------- install app (PWA) ---------- */
+  var installButtons = Array.prototype.slice.call(document.querySelectorAll("[data-install]"));
+  var deferredInstall = null;
+  var standalone = (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || window.navigator.standalone === true;
+  function showInstall(show) {
+    installButtons.forEach(function (b) { b.hidden = !show; });
+  }
+  if (standalone) showInstall(false);
+  window.addEventListener("beforeinstallprompt", function (e) {
+    e.preventDefault();
+    deferredInstall = e;
+    root.setAttribute("data-install-ready", "true");
+    showInstall(true);
+  });
+  window.addEventListener("appinstalled", function () {
+    deferredInstall = null;
+    root.removeAttribute("data-install-ready");
+    showInstall(false);
+    toast((document.body.dataset && document.body.dataset.msgInstallDone) || "تم تثبيت التطبيق بنجاح");
+  });
+  function installApp() {
+    if (deferredInstall) {
+      deferredInstall.prompt();
+      var choice = deferredInstall.userChoice;
+      deferredInstall = null;
+      if (choice && choice.then) {
+        choice.then(function (result) {
+          if (result && result.outcome === "accepted") showInstall(false);
+        }).catch(function () {});
+      }
+      return;
+    }
+    var ua = navigator.userAgent || "";
+    var isIos = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    var ds = document.body.dataset || {};
+    toast(isIos
+      ? (ds.msgInstallIos || "على iPhone أو iPad: اضغط زر المشاركة ثم «إضافة إلى الشاشة الرئيسية».")
+      : (ds.msgInstall || "لتثبيت التطبيق: افتح قائمة المتصفح واختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية»."));
+  }
+
   document.addEventListener("click", function (e) {
+    if (e.target.closest("[data-install]")) {
+      installApp();
+      return;
+    }
     var soon = e.target.closest("[data-soon]");
     if (soon) {
       e.preventDefault();

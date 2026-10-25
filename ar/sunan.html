@@ -12,15 +12,15 @@
 <script>
 (function(){try{var t=localStorage.getItem("salat.theme");if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}document.documentElement.setAttribute("data-theme",t);var s=parseFloat(localStorage.getItem("salat.scale"));if(s>=0.85&&s<=1.35)document.documentElement.style.setProperty("--scale",s);}catch(e){}})();
 </script>
-<link rel="stylesheet" href="../assets/css/fonts.css?v=2.1.0">
-<link rel="stylesheet" href="../assets/css/style.css?v=2.1.0">
+<link rel="stylesheet" href="../assets/css/fonts.css?v=2.2.0">
+<link rel="stylesheet" href="../assets/css/style.css?v=2.2.0">
 <link rel="manifest" href="../manifest.webmanifest">
 <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
 <meta name="theme-color" content="#1D6B50">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/icon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="../assets/img/icon-192.png">
 </head>
-<body data-msg-up="تكبير الخط" data-msg-down="تصغير الخط">
+<body data-msg-up="تكبير الخط" data-msg-down="تصغير الخط" data-msg-install="لتثبيت التطبيق: افتح قائمة المتصفح واختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية»." data-msg-install-ios="على iPhone أو iPad: اضغط زر المشاركة ثم «إضافة إلى الشاشة الرئيسية»." data-msg-install-done="تم تثبيت التطبيق بنجاح">
 <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
 <header class="site-header">
   <div class="header-inner">
@@ -29,6 +29,7 @@
       <a class="nav-link" href="index.html">الرئيسية</a><a class="nav-link" href="salah.html">طريقة الصلاة</a><a class="nav-link" href="adhkar.html">الأذكار</a><a class="nav-link" href="sunan.html" aria-current="page">السنن</a>
       <div class="lang-switch" role="group" aria-label="اللغة"><a href="../ar/sunan.html" data-lang="ar" aria-current="page">ع</a><a href="#" class="lang-soon" data-soon="سوف يتم في مرحلة قادمة" aria-disabled="true" title="سوف يتم في مرحلة قادمة">EN</a><a href="#" class="lang-soon" data-soon="سوف يتم في مرحلة قادمة" aria-disabled="true" title="سوف يتم في مرحلة قادمة">UR</a></div>
       <div class="tools">
+        <button class="icon-btn install-btn" data-install aria-label="تثبيت التطبيق" title="تثبيت التطبيق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M12 6.5v7"/><path d="m9.5 11 2.5 2.5L14.5 11"/><path d="M10 18h4"/></svg></button>
         <button class="icon-btn" data-theme-toggle data-label-dark="الوضع الليلي" data-label-light="الوضع الفاتح" aria-label="الوضع الليلي"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
         <button class="icon-btn" data-print aria-label="طباعة" title="طباعة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V3h10v6"/><path d="M7 18H4v-7h16v7h-3"/><path d="M7 14h10v7H7z"/></svg></button>
       </div>
@@ -51,6 +52,7 @@
   <img src="../assets/img/masjid-calligraphy.jpg" alt="آيات ونقوش على جدران المسجد" width="1179" height="2309" fetchpriority="high" decoding="async">
   <div class="cap"><h1>السنن</h1><p>أبواب الكتاب</p></div>
 </div>
+    
     <div class="search-box">
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
       <input id="q" type="search" placeholder="ابحث في النص…" aria-label="ابحث في النص…">
@@ -85,10 +87,11 @@
 <footer class="site-footer">
   <p>النص العربي من كتاب «كيفية صلاة النبي ﷺ» لسماحة الشيخ عبد العزيز بن عبد الله بن باز رحمه الله.</p>
   <p class="disclaimer">تنبيه: هذا الموقع يعرض النص العربي للكتاب — يُرجى مراجعة النص شرعياً قبل الاعتماد عليه، والاعتماد على الأصل المطبوع.</p>
+  
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="../assets/js/app.js?v=2.1.0"></script>
+<script src="../assets/js/app.js?v=2.2.0"></script>
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {

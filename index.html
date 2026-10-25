@@ -12,8 +12,8 @@
 <script>
 (function(){try{var t=localStorage.getItem("salat.theme");if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}document.documentElement.setAttribute("data-theme",t);var s=parseFloat(localStorage.getItem("salat.scale"));if(s>=0.85&&s<=1.35)document.documentElement.style.setProperty("--scale",s);}catch(e){}})();
 </script>
-<link rel="stylesheet" href="assets/css/fonts.css?v=2.1.0">
-<link rel="stylesheet" href="assets/css/style.css?v=2.1.0">
+<link rel="stylesheet" href="assets/css/fonts.css?v=2.2.0">
+<link rel="stylesheet" href="assets/css/style.css?v=2.2.0">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
 <meta name="theme-color" content="#1D6B50">
@@ -50,6 +50,13 @@
   </div>
   <h1>صفة صلاة النبي ﷺ</h1>
   <p class="sub">شرح مختصر لطريقة صلاة النبي ﷺ — من كتاب «كيفية صلاة النبي ﷺ» لسماحة الشيخ عبد العزيز بن عبد الله بن باز رحمه الله. النسخة العربية متاحة الآن، والنسختان الإنجليزية والأردية في مرحلة قادمة.</p>
+
+  <p class="install-line">
+    <button class="install-cta" type="button" data-install aria-label="تثبيت التطبيق" title="تثبيت التطبيق">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M12 6.5v7"/><path d="m9.5 11 2.5 2.5L14.5 11"/><path d="M10 18h4"/></svg>
+      <span>تثبيت التطبيق</span>
+    </button>
+  </p>
 
   <div class="lang-cards">
     <a class="lang-card" href="ar/" hreflang="ar" lang="ar">
@@ -91,9 +98,10 @@
 <footer class="site-footer">
   <p>النص العربي من كتاب «كيفية صلاة النبي ﷺ» لسماحة الشيخ عبد العزيز بن عبد الله بن باز رحمه الله. النسخة العربية منشورة الآن، والترجمتان الإنجليزية والأردية في مرحلة قادمة.</p>
   <p class="disclaimer">تنبيه: هذا الموقع يعرض النص العربي للكتاب — يُرجى مراجعة النص شرعياً قبل الاعتماد عليه، والاعتماد على الأصل المطبوع.</p>
+  <p class="designer">تصميم الموقع والتطبيق: <strong>أنور آل حسن</strong></p>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="assets/js/app.js?v=2.1.0"></script>
+<script src="assets/js/app.js?v=2.2.0"></script>
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {

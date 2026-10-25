@@ -52,6 +52,7 @@ html[data-theme="dark"] {
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 
 html {
   font-size: calc(100% * var(--scale));
@@ -163,6 +164,19 @@ a:hover { color: var(--gold); }
 .icon-btn:hover { color: var(--accent); border-color: var(--accent); }
 .icon-btn svg { width: 17px; height: 17px; }
 .icon-btn .lbl { font-size: .78rem; font-weight: 700; }
+.icon-btn.install-btn { color: var(--gold); border-color: color-mix(in srgb, var(--gold) 34%, var(--line)); }
+.icon-btn.install-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+.install-line { margin: 0 0 1.5rem; }
+.install-cta {
+  display: inline-flex; align-items: center; gap: .45rem;
+  padding: .5rem .9rem; border: 1px solid color-mix(in srgb, var(--gold) 38%, var(--line));
+  border-radius: 999px; background: var(--surface); color: var(--gold);
+  font-family: var(--font-ui); font-size: .88rem; font-weight: 700;
+  cursor: pointer; box-shadow: var(--shadow);
+}
+.install-cta:hover { color: var(--accent); border-color: var(--accent); background: var(--surface-2); }
+.install-cta svg { width: 18px; height: 18px; flex: none; }
 
 /* ---------------- Layout ---------------- */
 .layout {
@@ -231,7 +245,7 @@ html[dir="rtl"] .hero p { line-height: 1.9; }
   background: var(--accent-soft); color: var(--accent); margin-bottom: .65rem;
 }
 .card .ic svg { width: 22px; height: 22px; }
-.card h3 { margin: 0 0 .25rem; font-size: 1.06rem; }
+.card h2 { margin: 0 0 .25rem; font-size: 1.06rem; }
 .card p { margin: 0; color: var(--muted); font-size: .9rem; font-family: var(--font-ui); }
 
 section.chapter { margin-bottom: 2.2rem; scroll-margin-top: 5.5rem; }
@@ -417,6 +431,8 @@ footer.site-footer {
 footer.site-footer a { color: var(--ink-soft); }
 @media (min-width: 1000px) { footer.site-footer { padding-bottom: 2rem; } }
 footer.site-footer .disclaimer { max-width: 60ch; margin: .6rem auto 0; line-height: 1.7; }
+footer.site-footer .designer { margin: 1rem auto 0; color: var(--gold); font-weight: 700; }
+footer.site-footer .designer strong { color: var(--gold); font-weight: 800; }
 
 /* toast */
 .toast {
@@ -467,7 +483,7 @@ figure.plate figcaption {
     --accent: #000; --gold: #000; --accent-soft: #fff; --gold-soft: #fff;
   }
   html { font-size: 12pt; }
-  .site-header, .side, .mobile-bar, .mobile-index, .backdrop, .toast, .search-box, .card-grid, .skip-link, .lang-switch, .tools { display: none !important; }
+  .site-header, .side, .mobile-bar, .mobile-index, .backdrop, .toast, .search-box, .card-grid, .skip-link, .lang-switch, .tools, .install-line { display: none !important; }
   .layout { display: block; padding: 0; max-width: none; }
   body { background: #fff; color: #000; }
   .banner { border: 0; box-shadow: none; margin-bottom: 1rem; }
