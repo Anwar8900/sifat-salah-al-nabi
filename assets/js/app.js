@@ -105,15 +105,45 @@
   /* ---------- search ---------- */
   var input = document.getElementById("q");
   var head = document.getElementById("results-head");
-  var paras = Array.prototype.slice.call(document.querySelectorAll(".prose p"));
+  var blocks = Array.prototype.slice.call(document.querySelectorAll(".prose p, .prose li"));
   var notes = Array.prototype.slice.call(document.querySelectorAll(".prose .explain"));
 
-  // Normalise once, so composed/decomposed hamza forms are searchable and copyable.
-  paras.forEach(function (p) {
-    var t = p.textContent;
-    try { t = t.normalize("NFC"); } catch (e) {}
-    p.textContent = t;
+  // Normalise text nodes only, so inline labels and other markup stay intact.
+  blocks.forEach(function (el) {
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+    var node;
+    while ((node = walker.nextNode())) {
+      try { node.nodeValue = node.nodeValue.normalize("NFC"); } catch (e) {}
+    }
   });
+
+  function clearMarks(el) {
+    var marks = el.querySelectorAll("mark");
+    if (!marks.length) return;
+    for (var i = 0; i < marks.length; i++) {
+      var mark = marks[i];
+      mark.parentNode.replaceChild(document.createTextNode(mark.textContent), mark);
+    }
+    el.normalize();
+  }
+
+  function highlight(el, needle) {
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+    var node;
+    while ((node = walker.nextNode())) {
+      var text = node.nodeValue;
+      var idx = text.toLowerCase().indexOf(needle);
+      if (idx >= 0) {
+        node.splitText(idx + needle.length);
+        var mid = node.splitText(idx);
+        var mark = document.createElement("mark");
+        mark.textContent = mid.nodeValue;
+        mid.parentNode.replaceChild(mark, mid);
+        return true;
+      }
+    }
+    return false;
+  }
 
   function setSideState() {
     document.querySelectorAll(".side ol li").forEach(function (li) {
@@ -129,9 +159,9 @@
       var q = input.value.trim();
       if (q.length < 2) {
         if (head) head.textContent = "";
-        paras.forEach(function (p) {
-          p.hidden = false;
-          if (p.dataset.orig) { p.textContent = p.dataset.orig; delete p.dataset.orig; }
+        blocks.forEach(function (el) {
+          el.hidden = false;
+          clearMarks(el);
         });
         notes.forEach(function (n) { n.hidden = false; });
         document.querySelectorAll("section.chapter, .intro-block").forEach(function (c) { c.hidden = false; });
@@ -142,23 +172,13 @@
       try { needle = needle.normalize("NFC"); } catch (e) {}
       needle = needle.toLowerCase();
       var hits = 0;
-      paras.forEach(function (p) {
-        var t = p.textContent;
-        var i = t.toLowerCase().indexOf(needle);
-        if (i >= 0) {
+      blocks.forEach(function (el) {
+        clearMarks(el);
+        if (highlight(el, needle)) {
           hits++;
-          p.hidden = false;
-          if (!p.dataset.orig) p.dataset.orig = t;
-          var src = p.dataset.orig;
-          p.innerHTML = "";
-          p.appendChild(document.createTextNode(src.slice(0, i)));
-          var mark = document.createElement("mark");
-          mark.textContent = src.slice(i, i + needle.length);
-          p.appendChild(mark);
-          p.appendChild(document.createTextNode(src.slice(i + q.length)));
+          el.hidden = false;
         } else {
-          p.hidden = true;
-          if (p.dataset.orig) { p.textContent = p.dataset.orig; delete p.dataset.orig; }
+          el.hidden = true;
         }
       });
       if (head) {
@@ -167,10 +187,12 @@
           : (head.dataset.none || "No results");
       }
       notes.forEach(function (n) {
-        n.hidden = (n.querySelectorAll("p:not([hidden])").length === 0);
+        n.hidden = !Array.prototype.some.call(n.querySelectorAll("p, li"), function (block) {
+          return !block.hidden;
+        });
       });
       document.querySelectorAll("section.chapter, .intro-block").forEach(function (c) {
-        c.hidden = (c.querySelectorAll(".prose p:not([hidden])").length === 0);
+        c.hidden = (c.querySelectorAll(".prose p:not([hidden]), .prose li:not([hidden])").length === 0);
       });
       setSideState();
     });

@@ -245,6 +245,10 @@ section.chapter > h2 .step {
   display: grid; place-items: center; font-size: .85rem; font-family: var(--font-ui); font-weight: 700;
   background: var(--accent); color: #fff;
 }
+html[data-theme="dark"] .skip-link,
+html[data-theme="dark"] .lang-switch a[aria-current="page"],
+html[data-theme="dark"] .lang-switch a[aria-current="true"],
+html[data-theme="dark"] section.chapter > h2 .step { color: #0F1A15; }
 section.chapter > h2 .src { margin-inline-start: auto; font-size: .72rem; color: var(--muted); font-family: var(--font-ui); font-weight: 500; }
 
 .prose { max-width: var(--measure); }
@@ -277,6 +281,28 @@ html[lang="ur"] .prose p { line-height: var(--lh-ur); text-align: right; }
   text-align: right;
 }
 .prose .explain p:last-child { margin-bottom: 0; }
+.prose .explain-title {
+  margin: 0 0 .55rem;
+  font-family: var(--font-ar);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--accent);
+}
+.prose .explain-list {
+  margin: .25rem 0 0;
+  padding-inline-start: 1.35rem;
+  list-style: disc;
+}
+.prose .explain-list li {
+  margin: 0 0 .55rem;
+  color: var(--ink-soft);
+  line-height: var(--lh-ar);
+  text-align: right;
+}
+.prose .explain-list li:last-child { margin-bottom: 0; }
+.prose .explain-list li::marker { color: var(--gold); }
+.prose .explain-list strong { color: var(--ink); }
 .prose .ref { color: var(--muted); font-size: .84em; font-family: var(--font-ui); }
 .prose strong { color: var(--ink); }
 
@@ -440,7 +466,8 @@ figure.plate figcaption {
   section.chapter > h2 .step { background: #000; color: #fff; }
   .prose p { text-align: start; orphans: 3; widows: 3; }
   .prose .explain { break-inside: avoid; page-break-inside: avoid; background: #fff; border-color: #ccc; border-inline-start-color: #000; }
-  .prose .explain p { color: #000; text-align: start; }
+  .prose .explain p, .prose .explain-title, .prose .explain-list li { color: #000; text-align: start; }
+  .prose .explain-list li::marker { color: #000; }
   .intro-block { break-inside: avoid; page-break-inside: avoid; box-shadow: none; border: 1px solid #ccc; border-top: 3px solid #000; background: #fff; }
   .intro-block > h2, .intro-prose p { color: #000; }
   figure.plate { break-inside: avoid; page-break-inside: avoid; }
