@@ -1,6 +1,6 @@
 /* Service worker — offline support for صفة صلاة النبي */
-var CACHE = "salat-v1.9.0";
-var VER = "1.9.0";
+var CACHE = "salat-v2.0.0";
+var VER = "2.0.0";
 var CORE = [
   "./",
   "./index.html",
