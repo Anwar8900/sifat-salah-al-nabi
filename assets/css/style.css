@@ -303,6 +303,7 @@ html[lang="ur"] .prose p { line-height: var(--lh-ur); text-align: right; }
 .prose .explain-list li:last-child { margin-bottom: 0; }
 .prose .explain-list li::marker { color: var(--gold); }
 .prose .explain-list strong { color: var(--ink); }
+.prose .explain .ref { color: var(--muted); font-family: var(--font-ui); font-size: .84em; text-align: start; }
 .prose .dua-list {
   margin: .25rem 0 1rem;
   padding-inline-start: 1.35rem;

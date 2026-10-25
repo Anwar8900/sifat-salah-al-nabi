@@ -1,6 +1,6 @@
 /* Service worker — offline support for صفة صلاة النبي */
-var CACHE = "salat-v2.0.0";
-var VER = "2.0.0";
+var CACHE = "salat-v2.1.0";
+var VER = "2.1.0";
 var CORE = [
   "./",
   "./index.html",
@@ -27,7 +27,8 @@ self.addEventListener("install", function (e) {
   e.waitUntil(
     caches.open(CACHE).then(function (c) {
       return Promise.all(CORE.map(function (u) {
-        return c.add(u).catch(function () { /* ignore individual failures */ });
+        var req = new Request(new URL(u, self.location.href).href, { cache: "reload" });
+        return c.add(req).catch(function () { /* ignore individual failures */ });
       }));
     }).then(function () { return self.skipWaiting(); })
   );
@@ -53,12 +54,12 @@ self.addEventListener("fetch", function (e) {
     caches.match(req, { ignoreSearch: true }).then(function (hit) {
       if (hit) {
         // refresh in the background (stale-while-revalidate)
-        fetch(req).then(function (res) {
+        fetch(req, { cache: "reload" }).then(function (res) {
           if (res && res.ok) caches.open(CACHE).then(function (c) { c.put(req, res.clone()); });
         }).catch(function () {});
         return hit;
       }
-      return fetch(req).then(function (res) {
+      return fetch(req, { cache: "reload" }).then(function (res) {
         if (res && res.ok && (res.type === "basic" || res.type === "default")) {
           var copy = res.clone();
           caches.open(CACHE).then(function (c) { c.put(req, copy); });
