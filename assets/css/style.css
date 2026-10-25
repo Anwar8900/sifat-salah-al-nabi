@@ -266,6 +266,39 @@ html[lang="ur"] .prose p { line-height: var(--lh-ur); text-align: right; }
 .prose .ref { color: var(--muted); font-size: .84em; font-family: var(--font-ui); }
 .prose strong { color: var(--ink); }
 
+/* ---------------- Standalone introduction ---------------- */
+.intro-block {
+  margin: 0 0 2.4rem;
+  padding: clamp(1.25rem, 3.4vw, 2rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  scroll-margin-top: 5.5rem;
+}
+.intro-block > h2 {
+  margin: 0 0 .9rem;
+  font-family: var(--font-ar);
+  font-size: clamp(1.4rem, 3vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--accent);
+}
+.intro-prose { max-width: var(--measure); }
+.intro-prose p {
+  margin: 0 0 1rem;
+  font-family: var(--font-ar);
+  font-size: clamp(1.06rem, 2.1vw, 1.14rem);
+  line-height: 2.05;
+  color: var(--ink-soft);
+  text-align: right;
+  hyphens: none;
+}
+.intro-prose p:first-child { color: var(--ink); }
+.intro-prose p:last-child { margin-bottom: 0; }
+html[dir="ltr"] .intro-prose p { text-align: left; }
+
 /* search */
 .search-box { position: relative; margin-bottom: 1.2rem; }
 .search-box input {
@@ -392,6 +425,8 @@ figure.plate figcaption {
   section.chapter > h2 { break-after: avoid; page-break-after: avoid; border-bottom-color: #ccc; color: #000; }
   section.chapter > h2 .step { background: #000; color: #fff; }
   .prose p { text-align: start; orphans: 3; widows: 3; }
+  .intro-block { break-inside: avoid; page-break-inside: avoid; box-shadow: none; border: 1px solid #ccc; border-top: 3px solid #000; background: #fff; }
+  .intro-block > h2, .intro-prose p { color: #000; }
   figure.plate { break-inside: avoid; page-break-inside: avoid; }
   figure.plate img { max-height: 70mm; border-color: #ccc; }
   a { color: #000; text-decoration: none; }

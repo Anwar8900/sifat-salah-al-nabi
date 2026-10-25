@@ -132,7 +132,7 @@
           p.hidden = false;
           if (p.dataset.orig) { p.textContent = p.dataset.orig; delete p.dataset.orig; }
         });
-        document.querySelectorAll("section.chapter").forEach(function (c) { c.hidden = false; });
+        document.querySelectorAll("section.chapter, .intro-block").forEach(function (c) { c.hidden = false; });
         setSideState();
         return;
       }
@@ -164,7 +164,7 @@
           ? (hits + " " + (hits === 1 ? (head.dataset.hitsOne || "result") : (head.dataset.hitsMany || "results")))
           : (head.dataset.none || "No results");
       }
-      document.querySelectorAll("section.chapter").forEach(function (c) {
+      document.querySelectorAll("section.chapter, .intro-block").forEach(function (c) {
         c.hidden = (c.querySelectorAll(".prose p:not([hidden])").length === 0);
       });
       setSideState();
