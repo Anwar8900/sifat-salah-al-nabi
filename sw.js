@@ -1,6 +1,7 @@
-/* Service worker — offline support for صفة صلاة النبي */
-var CACHE = "salat-v2.4.0";
-var VER = "2.4.0";
+/* Service worker — offline support for صفة صلاة النبي
+   Release 2.5.0 — mobile header, reading index, search reset, compact footer */
+var CACHE = "salat-v2.5.0";
+var VER = "2.5.0";
 var CORE = [
   "./",
   "./index.html",

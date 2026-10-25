@@ -12,8 +12,8 @@
 <script>
 (function(){try{var t=localStorage.getItem("salat.theme");if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}document.documentElement.setAttribute("data-theme",t);var s=parseFloat(localStorage.getItem("salat.scale"));if(s>=0.85&&s<=1.35)document.documentElement.style.setProperty("--scale",s);}catch(e){}})();
 </script>
-<link rel="stylesheet" href="../assets/css/fonts.css?v=2.4.0">
-<link rel="stylesheet" href="../assets/css/style.css?v=2.4.0">
+<link rel="stylesheet" href="../assets/css/fonts.css?v=2.5.0">
+<link rel="stylesheet" href="../assets/css/style.css?v=2.5.0">
 <link rel="manifest" href="../manifest.webmanifest">
 <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
 <meta name="theme-color" content="#1D6B50">
@@ -24,23 +24,23 @@
 <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="index.html"><span class="mark"><img src="../assets/img/logo-header.png" alt="" width="40" height="40" decoding="async"></span><span>صفة صلاة النبي ﷺ<small>شرح مختصر لطريقة صلاة النبي ﷺ</small></span></a>
+    <a class="brand" href="index.html" aria-label="صفة صلاة النبي ﷺ"><span class="mark"><img src="../assets/img/logo-header.png" alt="" width="40" height="40" decoding="async"></span><span class="brand-text"><span class="brand-full">صفة صلاة النبي ﷺ</span><span class="brand-short">صفة الصلاة</span><small>شرح مختصر لطريقة صلاة النبي ﷺ</small></span></a>
     <nav class="nav" aria-label="التنقل الرئيسي">
       <a class="nav-link" href="index.html">الرئيسية</a><a class="nav-link" href="salah.html">طريقة الصلاة</a><a class="nav-link" href="adhkar.html">الأذكار</a><a class="nav-link" href="sunan.html" aria-current="page">السنن</a>
-      <div class="lang-switch" role="group" aria-label="اللغة"><a href="../ar/sunan.html" data-lang="ar" aria-current="page">ع</a><a href="#" class="lang-soon" data-soon="سوف يتم في مرحلة قادمة" aria-disabled="true" title="سوف يتم في مرحلة قادمة">EN</a><a href="#" class="lang-soon" data-soon="سوف يتم في مرحلة قادمة" aria-disabled="true" title="سوف يتم في مرحلة قادمة">UR</a></div>
-      <div class="tools">
-        <button class="icon-btn install-btn" data-install aria-label="تثبيت التطبيق" title="تثبيت التطبيق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M12 6.5v7"/><path d="m9.5 11 2.5 2.5L14.5 11"/><path d="M10 18h4"/></svg></button>
-        <button class="icon-btn" data-theme-toggle data-label-dark="الوضع الليلي" data-label-light="الوضع الفاتح" aria-label="الوضع الليلي"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
-        <button class="icon-btn" data-print aria-label="طباعة" title="طباعة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V3h10v6"/><path d="M7 18H4v-7h16v7h-3"/><path d="M7 14h10v7H7z"/></svg></button>
-      </div>
+      <div class="lang-switch" role="group" aria-label="اللغة"><a href="../ar/sunan.html" data-lang="ar" aria-current="page">ع</a><a href="#" class="lang-soon" data-soon="سوف يتم في مرحلة قادمة" aria-disabled="true" title="سوف يتم في مرحلة قادمة"><span>EN</span><small>قريبًا</small></a><a href="#" class="lang-soon" data-soon="سوف يتم في مرحلة قادمة" aria-disabled="true" title="سوف يتم في مرحلة قادمة"><span>UR</span><small>قريبًا</small></a></div>
     </nav>
+    <div class="header-actions" role="group" aria-label="أدوات">
+      <button class="icon-btn install-btn" data-install aria-label="تثبيت التطبيق" title="تثبيت التطبيق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M12 6.5v7"/><path d="m9.5 11 2.5 2.5L14.5 11"/><path d="M10 18h4"/></svg></button>
+      <button class="icon-btn" data-theme-toggle data-label-dark="الوضع الليلي" data-label-light="الوضع الفاتح" aria-label="الوضع الليلي" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+      <button class="icon-btn" data-print aria-label="طباعة" title="طباعة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V3h10v6"/><path d="M7 18H4v-7h16v7h-3"/><path d="M7 14h10v7H7z"/></svg></button>
+    </div>
   </div>
 </header>
 
 <div class="layout">
   <aside class="side" aria-label="أبواب الكتاب">
     <h2>أبواب الكتاب</h2>
-    <ol><li><a href="#sunan"><span class="n">1</span><span>السنن الرواتب</span></a></li></ol>
+    <ol><li><a href="#sunan"><span class="n">١</span><span>السنن الرواتب</span></a></li></ol>
     <div class="side-tools">
       <button class="icon-btn" data-scale-down aria-label="تصغير الخط (A−)" title="تصغير الخط"><span class="lbl">A−</span></button>
       <button class="icon-btn" data-scale-up aria-label="تكبير الخط (A+)" title="تكبير الخط"><span class="lbl">A+</span></button>
@@ -53,12 +53,18 @@
   <div class="cap"><h1>السنن</h1><p>أبواب الكتاب</p></div>
 </div>
     
-    <div class="search-box">
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
-      <input id="q" type="search" placeholder="ابحث في النص…" aria-label="ابحث في النص…">
+    <div class="search-box" role="search">
+      <span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+      <input id="q" type="search" placeholder="ابحث في النص…" aria-label="ابحث في النص…" aria-describedby="search-help" autocomplete="off" spellcheck="false" enterkeyhint="search">
+      <button class="search-clear" type="button" data-search-clear aria-label="مسح" hidden>مسح</button>
     </div>
-    <p id="results-head" class="ref" role="status" aria-live="polite" data-hits-one="نتيجة" data-hits-many="نتائج" data-none="لا توجد نتائج"></p>
-    <section class="chapter" id="sunan"><h2><span class="step">1</span><span>السنن الرواتب</span></h2><div class="prose"><p>ويشرع لكل مسلم ومسلمة أن يصلي قبل صلاة الظهر أربع ركعات وبعدها ركعتين، وبعد صلاة المغرب ركعتين، وبعد صلاة العشاء ركعتين، وقبل صلاة الفجر ركعتين، الجميع اثنتا عشرة ركعة. وهذه الركعات تسمى الرواتب؛ لأن النبي ﷺ كان يحافظ عليها في الحضر.</p><p>أما في السفر فكان يتركها إلا سنة الفجر والوتر، فإنه كان عليه الصلاة والسلام يحافظ عليهما حضرًا وسفرًا. والأفضل أن تُصلى هذه الرواتب والوتر في البيت، فإن صلاها في المسجد فلا بأس؛ لقول النبي ﷺ: «أَفْضَلُ صَلَاةِ الْمَرْءِ فِي بَيْتِهِ، إِلَّا الصَّلَاةَ الْمَكْتُوبَةَ» (رواه البخاري).</p><p>والمحافظة على هذه الركعات من أسباب دخول الجنة؛ لقول النبي ﷺ: «مَنْ صَلَّى اثْنَتَيْ عَشْرَةَ رَكْعَةً فِي يَوْمٍ وَلَيْلَةٍ، بُنِيَ لَهُ بِهِنَّ بَيْتٌ فِي الْجَنَّةِ» (رواه مسلم).</p><p>وإن صلى أربعًا قبل العصر، واثنتين قبل صلاة المغرب، واثنتين قبل صلاة العشاء فحسن؛ لأنه صح عن النبي ﷺ ما يدل على ذلك. وإن صلى أربعًا بعد الظهر وأربعًا قبلها فحسن؛ لقول النبي ﷺ: «مَنْ حَافَظَ عَلَى أَرْبَعِ رَكَعَاتٍ قَبْلَ الظُّهْرِ، وَأَرْبَعٍ بَعْدَهَا حَرَّمَهُ اللَّهُ عَلَى النَّارِ» (رواه أحمد والترمذي وأبو داود).</p><p>والمعنى أنه يزيد على السنة الراتبة ركعتين بعد الظهر؛ لأن السنة الراتبة أربع قبلها واثنتان بعدها، فإذا زاد اثنتين بعدها حصل ما ذُكر في حديث أم حبيبة رضي الله عنها.</p><p>والله ولي التوفيق، وصلى الله وسلم على نبينا محمد بن عبد الله وعلى آله وأصحابه وأتباعه بإحسان إلى يوم الدين.</p></div></section>
+    <p class="search-hint" id="search-help">اكتب حرفين على الأقل للبحث في النص، واضغط Esc للمسح.</p>
+    <div class="search-status">
+      <p id="results-head" class="search-results" role="status" aria-live="polite" data-hits-one="نتيجة" data-hits-many="نتائج" data-none="لا توجد نتائج"></p>
+      <button class="search-reset" type="button" data-search-reset hidden>عرض النص كاملًا</button>
+    </div>
+    
+    <section class="chapter" id="sunan"><h2>السنن الرواتب</h2><div class="prose"><p>ويشرع لكل مسلم ومسلمة أن يصلي قبل صلاة الظهر أربع ركعات وبعدها ركعتين، وبعد صلاة المغرب ركعتين، وبعد صلاة العشاء ركعتين، وقبل صلاة الفجر ركعتين، الجميع اثنتا عشرة ركعة. وهذه الركعات تسمى الرواتب؛ لأن النبي ﷺ كان يحافظ عليها في الحضر.</p><p>أما في السفر فكان يتركها إلا سنة الفجر والوتر، فإنه كان عليه الصلاة والسلام يحافظ عليهما حضرًا وسفرًا. والأفضل أن تُصلى هذه الرواتب والوتر في البيت، فإن صلاها في المسجد فلا بأس؛ لقول النبي ﷺ: <span class="quote-text">«أَفْضَلُ صَلَاةِ الْمَرْءِ فِي بَيْتِهِ، إِلَّا الصَّلَاةَ الْمَكْتُوبَةَ»</span> <span class="source-ref">(رواه البخاري)</span>.</p><p>والمحافظة على هذه الركعات من أسباب دخول الجنة؛ لقول النبي ﷺ: <span class="quote-text">«مَنْ صَلَّى اثْنَتَيْ عَشْرَةَ رَكْعَةً فِي يَوْمٍ وَلَيْلَةٍ، بُنِيَ لَهُ بِهِنَّ بَيْتٌ فِي الْجَنَّةِ»</span> <span class="source-ref">(رواه مسلم)</span>.</p><p>وإن صلى أربعًا قبل العصر، واثنتين قبل صلاة المغرب، واثنتين قبل صلاة العشاء فحسن؛ لأنه صح عن النبي ﷺ ما يدل على ذلك. وإن صلى أربعًا بعد الظهر وأربعًا قبلها فحسن؛ لقول النبي ﷺ: <span class="quote-text">«مَنْ حَافَظَ عَلَى أَرْبَعِ رَكَعَاتٍ قَبْلَ الظُّهْرِ، وَأَرْبَعٍ بَعْدَهَا حَرَّمَهُ اللَّهُ عَلَى النَّارِ»</span> <span class="source-ref">(رواه أحمد والترمذي وأبو داود)</span>.</p><p>والمعنى أنه يزيد على السنة الراتبة ركعتين بعد الظهر؛ لأن السنة الراتبة أربع قبلها واثنتان بعدها، فإذا زاد اثنتين بعدها حصل ما ذُكر في حديث أم حبيبة رضي الله عنها.</p><p>والله ولي التوفيق، وصلى الله وسلم على نبينا محمد بن عبد الله وعلى آله وأصحابه وأتباعه بإحسان إلى يوم الدين.</p></div></section>
   </main>
 </div>
 
@@ -68,11 +74,17 @@
     <h2 id="drawer-title">فهرس الأبواب</h2>
     <button class="icon-btn" data-drawer-close aria-label="إغلاق" title="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
-  <ol><li><a href="#sunan"><span class="n">1</span><span>السنن الرواتب</span></a></li></ol>
+  <ol><li><a href="#sunan"><span class="n">١</span><span>السنن الرواتب</span></a></li></ol>
   <div class="side-tools">
     <button class="icon-btn" data-scale-down aria-label="تصغير الخط (A−)" title="تصغير الخط"><span class="lbl">A−</span></button>
     <button class="icon-btn" data-scale-up aria-label="تكبير الخط (A+)" title="تكبير الخط"><span class="lbl">A+</span></button>
     <button class="icon-btn" data-print aria-label="طباعة" title="طباعة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V3h10v6"/><path d="M7 18H4v-7h16v7h-3"/><path d="M7 14h10v7H7z"/></svg></button>
+  </div>
+    <div class="drawer-langs" aria-label="اللغة">
+    <span class="drawer-langs-title">اللغة</span>
+    <span class="lang-pill current">العربية</span>
+    <button type="button" class="lang-pill soon" data-soon="سوف يتم في مرحلة قادمة">English <small>قريبًا</small></button>
+    <button type="button" class="lang-pill soon" data-soon="سوف يتم في مرحلة قادمة">اردو <small>قريبًا</small></button>
   </div>
 </div>
 
@@ -81,18 +93,24 @@
   <a href="salah.html" ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 8l5-3 5 3M8 13c0 3 1.6 5 4 5s4-2 4-5"/><path d="M5 21h14"/></svg><span>طريقة الصلاة</span></a>
   <a href="adhkar.html" ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="5" r="2.2"/><circle cx="6.5" cy="12" r="2.2"/><circle cx="17.5" cy="12" r="2.2"/><circle cx="9" cy="19" r="2.2"/><circle cx="15" cy="19" r="2.2"/></svg><span>الأذكار</span></a>
   <a href="sunan.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2.2 1.6 3.2 3.3 3.2 5.3S13.6 11 12 12.6C10.4 11 8.8 9.7 8.8 7.3S9.8 3.6 12 2z"/><path d="M12 12.6V21M6 21h12"/><path d="M4.5 9.5c1.6-.4 3 .2 3.8 1.6M19.5 9.5c-1.6-.4-3 .2-3.8 1.6"/></svg><span>السنن</span></a>
-  <button class="icon-btn" data-drawer-toggle aria-label="أبواب الكتاب" aria-expanded="false" aria-controls="mobile-index" style="border:0;background:transparent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  <button class="icon-btn" data-drawer-toggle aria-label="أبواب الكتاب" aria-expanded="false" aria-controls="mobile-index"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>الفهرس</span></button>
 </nav>
 
 <footer class="site-footer">
-  <p>النص العربي من كتاب «كيفية صلاة النبي ﷺ» لسماحة الشيخ عبد العزيز بن عبد الله بن باز رحمه الله.</p>
-  <div class="islamic-rule" aria-hidden="true"><svg viewBox="0 0 720 34" preserveAspectRatio="xMidYMid meet" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M0 17h238M482 17h238"/><path d="M248 17h28M444 17h28"/><path d="M278 17l9-9 9 9-9 9zM424 17l9-9 9 9-9 9z"/><path d="M302 17h18M400 17h18"/><path d="M360 2l15 15-15 15-15-15z"/><path d="M360 7l10 10-10 10-10-10z"/><circle cx="360" cy="17" r="2.2"/><circle cx="286" cy="17" r="1.8"/><circle cx="434" cy="17" r="1.8"/><path d="M318 6c7 0 12 5 12 11s-5 11-12 11M402 6c-7 0-12 5-12 11s5 11 12 11"/></svg></div>
-  <p class="disclaimer">تنبيه: هذا الموقع يعرض النص العربي للكتاب المصدر، وفي حالة وجود أي تنبيه أو تعديل في المحتوى على الموقع يُرجى مراسلة المطور بالبريد الإلكتروني <a href="mailto:aah900@outlook.com" dir="ltr">aah900@outlook.com</a></p>
+  <div class="footer-main">
+    <p class="footer-source"><strong>المصدر:</strong> كتاب «كيفية صلاة النبي ﷺ» — الشيخ عبد العزيز بن عبد الله بن باز رحمه الله.</p>
+    <p class="footer-links"><span>تواصل:</span><a href="mailto:aah900@outlook.com" dir="ltr">aah900@outlook.com</a><span aria-hidden="true">·</span><span>© 2026 صفة صلاة النبي ﷺ</span><span aria-hidden="true">·</span><span>الاستخدام: يُسمح بالاطلاع والنقل مع ذكر المصدر.</span></p>
+  </div>
+  <details class="footer-disclaimer">
+    <summary>تنبيه المحتوى</summary>
+    <div class="islamic-rule" aria-hidden="true"><svg viewBox="0 0 720 34" preserveAspectRatio="xMidYMid meet" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M0 17h238M482 17h238"/><path d="M248 17h28M444 17h28"/><path d="M278 17l9-9 9 9-9 9zM424 17l9-9 9 9-9 9z"/><path d="M302 17h18M400 17h18"/><path d="M360 2l15 15-15 15-15-15z"/><path d="M360 7l10 10-10 10-10-10z"/><circle cx="360" cy="17" r="2.2"/><circle cx="286" cy="17" r="1.8"/><circle cx="434" cy="17" r="1.8"/><path d="M318 6c7 0 12 5 12 11s-5 11-12 11M402 6c-7 0-12 5-12 11s5 11 12 11"/></svg></div>
+    <p class="disclaimer">تنبيه: هذا الموقع يعرض النص العربي للكتاب المصدر، وفي حالة وجود أي تنبيه أو تعديل في المحتوى على الموقع يُرجى مراسلة المطور بالبريد الإلكتروني <a href="mailto:aah900@outlook.com" dir="ltr">aah900@outlook.com</a></p>
+  </details>
   
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="../assets/js/app.js?v=2.4.0"></script>
+<script src="../assets/js/app.js?v=2.5.0"></script>
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {

@@ -12,39 +12,58 @@
 <script>
 (function(){try{var t=localStorage.getItem("salat.theme");if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}document.documentElement.setAttribute("data-theme",t);var s=parseFloat(localStorage.getItem("salat.scale"));if(s>=0.85&&s<=1.35)document.documentElement.style.setProperty("--scale",s);}catch(e){}})();
 </script>
-<link rel="stylesheet" href="assets/css/fonts.css?v=2.4.0">
-<link rel="stylesheet" href="assets/css/style.css?v=2.4.0">
+<link rel="stylesheet" href="assets/css/fonts.css?v=2.5.0">
+<link rel="stylesheet" href="assets/css/style.css?v=2.5.0">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
 <meta name="theme-color" content="#1D6B50">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
 <style>
-  .landing { max-width: 860px; margin: 0 auto; text-align: center; padding: 2.2rem 1rem 4rem; }
-  .landing .mark-lg { width: 112px; height: 112px; margin: 0 auto 1.1rem; border-radius: 10px; overflow: hidden;
+  .landing { max-width: 860px; margin: 0 auto; text-align: center; padding: 1rem 1rem 3.2rem; min-width: 0; }
+  .landing-tools { display: flex; align-items: center; justify-content: flex-end; gap: .3rem; margin-bottom: .3rem; }
+  .landing .mark-lg { width: 104px; height: 104px; margin: 0 auto 1rem; border-radius: 10px; overflow: hidden;
     background: #0D2F1E; box-shadow: var(--shadow); }
   .landing .mark-lg img { width: 100%; height: 100%; display: block; object-fit: cover; }
-  .landing h1 { font-size: clamp(1.6rem, 4.4vw, 2.5rem); margin: 0 0 .5rem; line-height: 1.4; }
-  .landing .sub { color: var(--ink-soft); margin: 0 auto 2rem; max-width: 52ch; line-height: 1.9; }
-  .lang-cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-  .lang-card { display: block; text-decoration: none; color: inherit; padding: 1.4rem 1.1rem;
+  .landing h1 { font-size: clamp(1.6rem, 4.4vw, 2.5rem); margin: 0 0 .5rem; line-height: 1.4; text-wrap: balance; }
+  .landing .sub { color: var(--ink-soft); margin: 0 auto 1.8rem; max-width: 54ch; line-height: 1.85; text-wrap: pretty; }
+  .lang-cards { display: grid; gap: .85rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .lang-card { display: block; text-decoration: none; color: inherit; padding: 1.3rem 1.05rem;
     background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
     transition: transform .16s ease, border-color .16s ease; }
-  .lang-card:hover { transform: translateY(-3px); border-color: var(--accent); color: inherit; }
-  .lang-card.soon { cursor: pointer; }
+  .lang-card:hover { transform: translateY(-2px); border-color: var(--accent); color: inherit; }
+  .lang-card.soon { cursor: help; border-style: dashed; background: var(--surface-2); }
+  .lang-card.soon:hover { transform: none; border-color: var(--gold); }
   .lang-card .code { font-family: var(--font-ui); font-size: 1.05rem; font-weight: 800; color: var(--accent); }
   .lang-card .nm { font-size: 1.12rem; font-weight: 700; margin: .25rem 0 .2rem; }
   .lang-card .ds { color: var(--muted); font-size: .88rem; font-family: var(--font-ui); line-height: 1.6; }
+  .soon-badge { display: inline-flex; margin-top: .65rem; padding: .12rem .5rem; border-radius: 999px;
+    background: var(--gold-soft); color: var(--gold-strong); border: 1px solid color-mix(in srgb, var(--gold) 28%, transparent);
+    font-family: var(--font-ui); font-size: .7rem; font-weight: 700; }
   .pillars { display: grid; gap: .9rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: 2.2rem; text-align: start; }
   .pillar { background: var(--surface-2); border: 1px solid var(--line-soft); border-radius: var(--radius-sm); padding: 1rem; }
   .pillar .ic { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); margin-bottom: .5rem; }
   .pillar .ic svg { width: 20px; height: 20px; }
   .pillar h2 { margin: 0 0 .25rem; font-size: 1rem; }
   .pillar p { margin: 0; color: var(--muted); font-size: .86rem; font-family: var(--font-ui); line-height: 1.65; }
+  body.landing-page footer.site-footer { padding-bottom: 2rem; }
+  @media (max-width: 640px) {
+    .landing { padding: .35rem .85rem 2.6rem; }
+    .landing .mark-lg { width: 84px; height: 84px; }
+    .landing .sub { font-size: 1.02rem; margin-bottom: 1.4rem; }
+    .lang-cards { gap: .7rem; }
+    .lang-card { padding: 1.05rem .95rem; }
+    .pillars { margin-top: 1.6rem; }
+  }
 </style>
 </head>
-<body>
+<body class="landing-page" data-msg-up="تكبير الخط" data-msg-down="تصغير الخط" data-msg-install="لتثبيت التطبيق: افتح قائمة المتصفح واختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية»." data-msg-install-ios="على iPhone أو iPad: اضغط زر المشاركة ثم «إضافة إلى الشاشة الرئيسية»." data-msg-install-done="تم تثبيت التطبيق بنجاح">
+<a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
 <main class="landing" id="main">
+  <div class="landing-tools" role="group" aria-label="أدوات">
+    <button class="icon-btn" data-theme-toggle data-label-dark="الوضع الليلي" data-label-light="الوضع الفاتح" aria-label="الوضع الليلي" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <button class="icon-btn" data-print aria-label="طباعة" title="طباعة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V3h10v6"/><path d="M7 18H4v-7h16v7h-3"/><path d="M7 14h10v7H7z"/></svg></button>
+  </div>
   <div class="mark-lg">
     <img src="assets/img/logo-256.png" alt="" width="256" height="256" fetchpriority="high" decoding="async">
   </div>
@@ -68,11 +87,13 @@
       <span class="code">EN</span>
       <div class="nm" lang="en">English</div>
       <div class="ds">النسخة الإنجليزية ستتوفر في مرحلة قادمة.</div>
+      <span class="soon-badge">قريبًا</span>
     </a>
     <a class="lang-card soon" href="#" data-soon="سوف يتم في مرحلة قادمة" aria-disabled="true">
       <span class="code">UR</span>
       <div class="nm" lang="ur">اردو</div>
       <div class="ds">النسخة الأردية ستتوفر في مرحلة قادمة.</div>
+      <span class="soon-badge">قريبًا</span>
     </a>
   </div>
 
@@ -96,13 +117,19 @@
 </main>
 
 <footer class="site-footer">
-  <p>النص العربي من كتاب «كيفية صلاة النبي ﷺ» لسماحة الشيخ عبد العزيز بن عبد الله بن باز رحمه الله. النسخة العربية منشورة الآن، والترجمتان الإنجليزية والأردية في مرحلة قادمة.</p>
-  <div class="islamic-rule" aria-hidden="true"><svg viewBox="0 0 720 34" preserveAspectRatio="xMidYMid meet" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M0 17h238M482 17h238"/><path d="M248 17h28M444 17h28"/><path d="M278 17l9-9 9 9-9 9zM424 17l9-9 9 9-9 9z"/><path d="M302 17h18M400 17h18"/><path d="M360 2l15 15-15 15-15-15z"/><path d="M360 7l10 10-10 10-10-10z"/><circle cx="360" cy="17" r="2.2"/><circle cx="286" cy="17" r="1.8"/><circle cx="434" cy="17" r="1.8"/><path d="M318 6c7 0 12 5 12 11s-5 11-12 11M402 6c-7 0-12 5-12 11s5 11 12 11"/></svg></div>
-  <p class="disclaimer">تنبيه: هذا الموقع يعرض النص العربي للكتاب المصدر، وفي حالة وجود أي تنبيه أو تعديل في المحتوى على الموقع يُرجى مراسلة المطور بالبريد الإلكتروني <a href="mailto:aah900@outlook.com" dir="ltr">aah900@outlook.com</a></p>
+  <div class="footer-main">
+    <p class="footer-source"><strong>المصدر:</strong> كتاب «كيفية صلاة النبي ﷺ» — الشيخ عبد العزيز بن عبد الله بن باز رحمه الله.</p>
+    <p class="footer-links"><span>تواصل:</span><a href="mailto:aah900@outlook.com" dir="ltr">aah900@outlook.com</a><span aria-hidden="true">·</span><span>© 2026 صفة صلاة النبي ﷺ</span><span aria-hidden="true">·</span><span>الاستخدام: يُسمح بالاطلاع والنقل مع ذكر المصدر.</span></p>
+  </div>
+  <details class="footer-disclaimer" open>
+    <summary>تنبيه المحتوى</summary>
+    <div class="islamic-rule" aria-hidden="true"><svg viewBox="0 0 720 34" preserveAspectRatio="xMidYMid meet" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M0 17h238M482 17h238"/><path d="M248 17h28M444 17h28"/><path d="M278 17l9-9 9 9-9 9zM424 17l9-9 9 9-9 9z"/><path d="M302 17h18M400 17h18"/><path d="M360 2l15 15-15 15-15-15z"/><path d="M360 7l10 10-10 10-10-10z"/><circle cx="360" cy="17" r="2.2"/><circle cx="286" cy="17" r="1.8"/><circle cx="434" cy="17" r="1.8"/><path d="M318 6c7 0 12 5 12 11s-5 11-12 11M402 6c-7 0-12 5-12 11s5 11 12 11"/></svg></div>
+    <p class="disclaimer">تنبيه: هذا الموقع يعرض النص العربي للكتاب المصدر، وفي حالة وجود أي تنبيه أو تعديل في المحتوى على الموقع يُرجى مراسلة المطور بالبريد الإلكتروني <a href="mailto:aah900@outlook.com" dir="ltr">aah900@outlook.com</a></p>
+  </details>
   <p class="designer">تصميم الموقع والتطبيق: <strong>أنور آل حسن</strong></p>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="assets/js/app.js?v=2.4.0"></script>
+<script src="assets/js/app.js?v=2.5.0"></script>
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {
